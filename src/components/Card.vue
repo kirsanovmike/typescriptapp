@@ -5,16 +5,9 @@
 </template>
 
 <script lang="ts" setup>
-enum GENDER {
-  MALE,
-  FEMALE
-}
+import {type Invitee} from "@/types/user";
 
 defineProps<{
-  invitee: {
-    id: number,
-    name: string,
-    gender: GENDER
-  }
+  invitee: Invitee
 }>()
 </script>
