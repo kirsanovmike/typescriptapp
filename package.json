@@ -9,11 +9,12 @@
     "preview": "vite preview",
     "build-only": "vite build",
     "type-check": "vue-tsc --build --force",
-    "deploy": "git subtree push --prefix dist origin gh-pages"
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "gh-pages": "^6.1.1",
     "pinia": "^2.1.7",
+    "vite-plugin-pwa": "^0.19.7",
     "vue": "^3.4.21"
   },
   "devDependencies": {
