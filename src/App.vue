@@ -20,13 +20,23 @@
 </template>
 
 <script setup lang="ts">
-import {computed, ref} from "vue";
+import {computed, reactive, ref} from "vue";
 import Card from "@/components/Card.vue";
 import {GENDER, type Invitee} from "@/types/user";
 
 const name = ref<string>("");
 const gender = ref<GENDER>(GENDER.MALE)
 const invitees = ref<Invitee[]>([])
+
+interface IdName {
+  id: number,
+  name: string
+}
+
+const myFriend = reactive<IdName>({
+  id: 123,
+  name: "Mike",
+})
 
 const addInvitee = (): void => {
   if (name.value) {
