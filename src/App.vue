@@ -9,6 +9,7 @@
       <option :value="GENDER.FEMALE">Female</option>
     </select>
     <card v-for="(inv, index) in invitees" :key="index" :invitee="inv" />
+    <card />
     <p>
       maleCount: {{count.male}}
     </p>
@@ -27,7 +28,7 @@ const name = ref<string>("");
 const gender = ref<GENDER>(GENDER.MALE)
 const invitees = ref<Invitee[]>([])
 
-const addInvitee = ():void => {
+const addInvitee = (): void => {
   if (name.value) {
     invitees.value.push({
       id: Math.floor(Math.random() * 1_000_000),

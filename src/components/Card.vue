@@ -5,9 +5,19 @@
 </template>
 
 <script lang="ts" setup>
-import {type Invitee} from "@/types/user";
+import {GENDER, type Invitee} from "@/types/user";
 
-defineProps<{
-  invitee: Invitee
-}>()
+interface Props {
+  invitee: Invitee,
+  str?: string
+}
+
+withDefaults(defineProps<Props>(), {
+  invitee: () => ({
+    id: 1,
+    name: "---",
+    gender: GENDER.MALE
+  }),
+  str: "123313"
+})
 </script>
